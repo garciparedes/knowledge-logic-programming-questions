@@ -1,7 +1,7 @@
 \documentclass[10pt, a4paper,spanish]{article}
 
 \usepackage[T1]{fontenc}
-\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+\usepackage[hmarginratio=1:1,top=26mm]{geometry}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -36,11 +36,28 @@
 		animal(snoopy) \gets, \\
 		animal(kitty) \gets, \\
 		gatito(kitty) \gets, \\
-		gusta(elena,x) \gets animal(x), \neg gatito(x) \\
+		gusta(elena,x) \gets animal(x), \neg gatito(x), \\
 		\}\\$
 		y $G$ la meta: \\
 		$\gets \neg gusta(elena,kitty)$\\
 		?`Cuál es la respuesta computada de $P \cup {G}$ ?}
+
+		\paragraph{}
+
+
+	\section{Elaborar un programa definido que junto a la meta $G$: $\gets \neg p(x,y)$ tenga como respuestas correctas $\{ a / x \}$ y $\{b / y\}$ pero no $\{c / x, d / y\}$, con la restricción de que el símbolo de predicado p no ocurra en ningún hecho.}
+
+		\paragraph{}
+
+
+	\section{Sea $P$ el programa definido: \\
+		$\{\\
+		entero(0) \gets ,\\
+		entero(x) \gets entero(y), =(x, +(y,1)),\\
+		\}\\$
+		y $G$ la meta: \\
+		$entero(2) \gets$\\
+		Obtener las tres secuencias de un cómputo de G por P que obtenga la meta vacía. (Nota: utilizar la asociación de procedimientos para evaluar instancias básicas del predicado $=$ y la función $+$, con la interpretación habitual.)}
 
 		\paragraph{}
 
