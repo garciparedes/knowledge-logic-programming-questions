@@ -1,7 +1,12 @@
-\documentclass[10pt, a4paper,spanish]{article}
+\documentclass[11pt, a4paper,spanish]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[hmarginratio=1:1,top=26mm]{geometry}
+
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -10,16 +15,16 @@
 \fancyhead[C]{ \today \ $\bullet$ Ingeniería del Conocimiento $\bullet$ Tutoría sobre Programación Lógica}
 \fancyfoot[RO]{\thepage}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	TITLE SECTION
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \title{\vspace{-15mm}\fontsize{24.88pt}{10pt}\textbf{Tutoría sobre Programación Lógica}} % Article title
 
 \author{Sergio García Prado}
 \date{\today}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \begin{document}
 
@@ -27,17 +32,15 @@
 
 	\thispagestyle{fancy} % All pages have headers and footers
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	TEXT
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 	\section{Sea $P$ el programa normal: \\
-		$\{ \\
-		animal(snoopy) \gets, \\
+		$\{animal(snoopy) \gets, \\
 		animal(kitty) \gets, \\
 		gatito(kitty) \gets, \\
-		gusta(elena,x) \gets animal(x), \neg gatito(x), \\
-		\}\\$
+		gusta(elena,x) \gets animal(x), \neg gatito(x)\}\\$
 		y $G$ la meta: \\
 		$\gets \neg gusta(elena,kitty)$\\
 		?`Cuál es la respuesta computada de $P \cup {G}$ ?}
@@ -49,17 +52,21 @@
 
 		\paragraph{}
 
-
+	\clearpage
 	\section{Sea $P$ el programa definido: \\
-		$\{\\
-		entero(0) \gets ,\\
-		entero(x) \gets entero(y), =(x, +(y,1)),\\
-		\}\\$
+		$\{entero(0) \gets ,\\
+		entero(x) \gets entero(y), =(x, +(y,1))\}\\$
 		y $G$ la meta: \\
 		$entero(2) \gets$\\
-		Obtener las tres secuencias de un cómputo de G por P que obtenga la meta vacía. (Nota: utilizar la asociación de procedimientos para evaluar instancias básicas del predicado $=$ y la función $+$, con la interpretación habitual.)}
+		Obtener las tres secuencias de un cómputo de G por P que obtenga la meta vacía.}
 
 		\paragraph{}
-
+		Para obtener la meta vacía se llevará a cabo una resolución SLD con la selección del primer literal de la cláusula como regla de cómputo y busqueda primero en profundidad como regla de búsqueda. El cómputo por tanto queda de la siguiente manera. Las secuencias de cómputo son:
+		\begin{itemize}
+			\item Metas: $G_0, G_1, G_2,G_3$
+			\item Cláusulas: $C_1, C_2,C_3$
+			\item UMG's $O_1, O_2, O_3$
+		\end{itemize}
+		\includegraphics[width=0.9\textwidth]{sld-computation}
 
 \end{document}
