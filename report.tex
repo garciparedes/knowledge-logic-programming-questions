@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
+\usepackage{dirtytalk}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -48,16 +49,23 @@
 		\paragraph{}
 
 
-	\section{Elaborar un programa definido que junto a la meta $G$: $\gets \neg p(x,y)$ tenga como respuestas correctas $\{ a / x \}$ y $\{b / y\}$ pero no $\{c / x, d / y\}$, con la restricción de que el símbolo de predicado p no ocurra en ningún hecho.}
+	\section{Elaborar un programa definido que junto a la meta $G$: $\gets p(x,y)$ tenga como respuestas correctas $\{ a / x \}$ y $\{b / y\}$ pero no $\{c / x, d / y\}$, con la restricción de que el símbolo de predicado p no ocurra en ningún hecho.}
 
 		\paragraph{}
+		Conjunto de hechos y reglas:
+		\[ f(a) \gets, \]
+		\[ f(b) \gets, \]
+		\[ p(x,y) \gets f(x), f(y) \]
+
+		\paragraph{}
+		Puesto que estamos elaborando un programa definido, que por definición es un  \say{conjunto de hechos y reglas que describen explícitamente qué es cierto, sin información explicita sobre qué es falso}, no tenemos que indicar nada sobre las constantes $c$ y $d$.
 
 	\clearpage
 	\section{Sea $P$ el programa definido: \\
 		$\{entero(0) \gets ,\\
 		entero(x) \gets entero(y), =(x, +(y,1))\}\\$
 		y $G$ la meta: \\
-		$entero(2) \gets$\\
+		$\gets entero(2)$\\
 		Obtener las tres secuencias de un cómputo de G por P que obtenga la meta vacía.}
 
 		\paragraph{}
