@@ -47,7 +47,20 @@
 		?`Cuál es la respuesta computada de $P \cup {G}$ ?}
 
 		\paragraph{}
+		Para resolver este programa normal y poder llegar a la cláusula vacía deberemos hacer uso de la Suposición de Mundo Cerrado y además de la estrategia de resolución SLD con negación por fallo.
 
+		\paragraph{}
+		Puesto que no hay ninguna regla o hecho que unifique con la meta (puesto que está negada) trataremos encontrar una que unifique con su opuesto. En el caso de poder llegar a la cláusula vacía diremos que la meta es falsa, pero si llegamos al punto en que no se puede continuar por ninguna de las ramas de cómputo y tampoco tenemos la cláusula vacía diremos que la meta era verdadera:
+
+		\includegraphics[width=0.9\textwidth]{sldnf-computation-1}
+
+		\paragraph{}
+		Puesto que en este punto nos encontramos en la misma situación que en el paso anterior pero con una submeta realizaremos el mismo proceso considerando los mismos resultados:
+
+		\includegraphics[width=0.9\textwidth]{sldnf-computation-2}
+
+		\paragraph{}
+		En este caso la respuesta computada ha sido la cláusula vacía por lo que la submeta es cierta, por lo que su negación falsa. Esto se propaga hacia el paso anterior, que como hace falso la submeta $gusta(elena,kitty)$ entonces su negación $ \neg gusta(elena,kitty)$ es cierta y la respuesta computada es $\theta = [ ]$.
 
 	\section{Elaborar un programa definido que junto a la meta $G$: $\gets p(x,y)$ tenga como respuestas correctas $\{ a / x \}$ y $\{b / y\}$ pero no $\{c / x, d / y\}$, con la restricción de que el símbolo de predicado p no ocurra en ningún hecho.}
 
@@ -73,7 +86,7 @@
 		\begin{itemize}
 			\item Metas: $G_0, G_1, G_2,G_3$
 			\item Cláusulas: $C_1, C_2,C_3$
-			\item UMG's $O_1, O_2, O_3$
+			\item UMG's $\theta_1, \theta_2, \theta_3$
 		\end{itemize}
 		\includegraphics[width=0.9\textwidth]{sld-computation}
 
